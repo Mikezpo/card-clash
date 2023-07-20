@@ -42,6 +42,44 @@ div {
   background: rgb(197, 228, 234);
 }
 
+.secondDiv {
+  width: 20rem;
+  height: 20rem;
+  margin: 1rem 1rem 3rem 1rem;
+  flex-direction: column;
+  justify-content: space-between;
+  background: rgb(197, 228, 234);
+}
 
+button {
+  background: rgb(117, 162, 201);
+  padding: 0.5rem 1rem;
+  border-radius: 16px;
+  border: 1px solid rgb(117, 162, 201);
+  color: rgb(249, 243, 220);
+  font-weight: 500;
+  font-family: 'Lobster Two', cursive;
+  cursor: pointer;
+}
+
+button:hover {
+  background: rgb(249, 243, 220);
+  color: rgb(117, 162, 201);
+  transform: scale(1.1);
+  transition: all 0.8s ease-out;
+}
+
+h1, h2 {
+  font-family: 'Courgette', cursive;
+}
+
+h3 {
+  font-size: 2.8rem;
+  font-family: 'Lobster Two', cursive;
+}
+
+
+  
+  
 /* ADDITIONAL STYLES */
   
