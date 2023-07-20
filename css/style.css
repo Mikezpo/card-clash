@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Lobster+Two:ital@1&family=Oleo+Script&family=Pacifico&display=swap');
+
+/* Box Model Hack */
+*{
+    box-sizing: border-box;
+}
+
+
+/* LAYOUT */
+
+img{
+    height: 15rem;
+    width: 10rem;
+    background: rgb(249, 243, 220);
+    border-radius: 10px;
+    margin: 0 auto;
+    box-shadow: 10px 5px 10px rgb(117, 162, 201);
+}
+
+img:hover {
+  transform: scale(1.1);
+  transition: all 0.8s ease;
+}
+
+body {
+  margin: 0;
+  background: rgb(232, 226, 203);
+}
+
+section {
+  padding: 2rem;
+  margin: 2rem;
+  text-align: center;
+  background: rgb(249, 243, 220);
+}
+
+div {
+  margin: 4rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(197, 228, 234);
+}
+
+
+/* ADDITIONAL STYLES */
+  
