@@ -1,6 +1,6 @@
 let deckId = ''
 
-fetch('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1')
+fetch('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=10')
     .then(res => res.json())
     .then(data => {
         console.log(data)
@@ -14,6 +14,12 @@ fetch('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1')
 
 
 document.querySelector('button').addEventListener('click', drawTwo)
+
+document.querySelector('input').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        drawTwo();
+    }
+  });
 
 function drawTwo(){
     const url = `https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=2`
