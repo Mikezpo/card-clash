@@ -16,3 +16,15 @@ The project was built using the following technologies:
 - JavaScript
 
 
+## Features to be added
+I'm currently working on the "War" mode, where a tie between the drawn cards will lead to an exhilarating showdown with high stakes. Stay tuned for this upcoming feature, which will add an extra layer of excitement to your battles.
+
+
+## Contact Me
+If you'd like to learn more about my skills and experience, please don't hesitate to reach out. I'd love to hear from you!
+If you encounter any issues while using Drink Mixology or have suggestions for improvement, please don't hesitate to open an issue in this repository. Feedback is very much appreciated.
+
+
+## Conclusion
+Thank you for visiting my project. I hope you find my work as exciting and thought-provoking as I do.
+Get ready to engage in card battles and show your skills in Card Clash! May the best strategist win! ♠️♣️♥️♦️
