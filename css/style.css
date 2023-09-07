@@ -52,12 +52,16 @@ div {
 }
 
 .secondDiv {
-  width: 20rem;
+  max-width: 20rem;
   height: 20rem;
   margin: 1rem 1rem 3rem 1rem;
   flex-direction: column;
   justify-content: space-between;
   background: rgb(197, 228, 234);
+}
+
+.imageOneDiv {
+  padding-right: 3rem;
 }
 
 button {
@@ -139,5 +143,16 @@ footer a {
 footer a:hover {
   border: 1px solid rgb(117, 162, 201);
   box-shadow: 0px 0px 10px rgb(117, 162, 201);
+
+}
+
+@media screen and (max-width: 550px) {
+  .imagesDiv {
+    flex-direction: column;
+  }
+
+  .imageOneDiv {
+    padding-right: 0;
+  }
 
 }
