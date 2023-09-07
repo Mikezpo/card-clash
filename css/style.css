@@ -91,3 +91,28 @@ h3 {
   font-size: 2.2rem;
   font-family: 'Lobster Two', cursive;
 }
+/* Scores */
+
+#scoreboard {
+  max-width: 30rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 20px rgb(117, 162, 201);
+  background: rgb(197, 228, 234);
+}
+
+#scoreboard p {
+  font-size: 1.8rem;
+  margin: 1rem auto;
+}
+
+#scoreboard span {
+  font-weight: bold;
+}
+
+#scoreMessage {
+  font-size: 2rem;
+  font-weight: bold;
+
+}
+
