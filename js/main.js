@@ -1,4 +1,19 @@
-let deckId = ''
+let deckId = '';
+
+let player1TotalScore = 0;
+let player2TotalScore = 0;
+let totalRoundsPlayed = 0;
+
+const player1Card = document.querySelector('#player1');
+const player2Card = document.querySelector('#player2');
+
+player1Card.addEventListener('animationend', function() {
+    player1Card.classList.remove('card-slide-in');
+});
+
+player2Card.addEventListener('animationend', function() {
+    player2Card.classList.remove('card-slide-in');
+});
 
 // Fetch and shuffle the deck
 fetch('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1')
@@ -14,18 +29,23 @@ fetch('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1')
 // Add event listener to the button
 document.querySelector('button').addEventListener('click', drawTwo);
 
-let player1TotalScore = 0;
-let player2TotalScore = 0;
-let totalRoundsPlayed = 0;
-
 function drawTwo() {
     const url = `https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=2`;
 
     fetch(url)
         .then(res => res.json())
         .then(data => {
-            document.querySelector('#player1').src = data.cards[0].image;
-            document.querySelector('#player2').src = data.cards[1].image;
+            player1Card.classList.remove('card-slide-in');
+            player2Card.classList.remove('card-slide-in');
+
+            player1Card.offsetWidth;  // Trigger a reflow
+            player2Card.offsetWidth;  // Trigger a reflow
+
+            player1Card.classList.add('card-slide-in');
+            player2Card.classList.add('card-slide-in');
+
+            player1Card.src = data.cards[0].image;
+            player2Card.src = data.cards[1].image;
 
             let player1Val = convertToNum(data.cards[0].value);
             let player2Val = convertToNum(data.cards[1].value);
@@ -53,6 +73,9 @@ function drawTwo() {
             showError("The card deck is finished. Please refresh the page.");
         });
 }
+
+// ... (The rest of your code remains unchanged)
+
 
 function updateScores() {
     document.querySelector('#player1Score').innerText = player1TotalScore;

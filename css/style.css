@@ -20,7 +20,23 @@ img{
 
 img:hover {
   transform: scale(1.1);
-  
+}
+
+.card-slide-in {
+  animation-name: slideIn;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideIn {
+  from {
+      transform: translateY(-100%);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
 }
 
 body {
@@ -117,7 +133,17 @@ h3 {
 #scoreMessage {
   font-size: 2rem;
   font-weight: bold;
+}
 
+.fade-in {
+  animation-name: fadeIn;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* Footer */
