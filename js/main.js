@@ -54,7 +54,26 @@ function drawTwo() {
         });
 }
 
+function updateScores() {
+    document.querySelector('#player1Score').innerText = player1TotalScore;
+    document.querySelector('#player2Score').innerText = player2TotalScore;
+    document.querySelector('#totalRounds').innerText = totalRoundsPlayed;
+}
 
+function decideWinner() {
+    // Calculate the absolute difference
+    let pointDifference = Math.abs(player1TotalScore - player2TotalScore); 
+    
+    if (player1TotalScore > player2TotalScore) {
+        showScore(`Game Over! Player 1 wins the game by ${pointDifference} points!`);
+    } else if (player1TotalScore < player2TotalScore) {
+        showScore(`Game Over! Player 2 wins the game by ${pointDifference} points!`);
+    } else {
+        showScore('Game Over! It\'s a draw!');
+    }
+
+    document.querySelector('button').disabled = true;
+}
 
 // Convert card value to number for comparison
 function convertToNum(val) {
