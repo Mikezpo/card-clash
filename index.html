@@ -2,8 +2,9 @@
 <html lang="en">
 	<head>
     	<meta charset="utf-8">
-    	<meta name="Card Clash is a simple card game." content="Cards">
-    	<meta name="keywords" content="one, two, three">
+    	<meta name="description" content="Card Clash is a simple card game.">
+    	<meta name="keywords" content="card game, card clash, card draw, player game">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<title>Card Clash</title>
 
@@ -19,18 +20,33 @@
                 <div>
                     <div class="secondDiv">
                         <h2>Player 1</h2>
-                        <img id="player1" src="https://images.unsplash.com/photo-1631533278749-645136cb6edb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="playing card">
+                        <img id="player1" src="https://images.unsplash.com/photo-1631533278749-645136cb6edb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="Placeholder for player 1 card">
                     </div>
                     <div class="secondDiv">
                         <h2>Player 2</h2>
-                        <img id="player2" src="https://images.unsplash.com/photo-1632636860115-41a0ae878f2f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="playing card">
+                        <img id="player2" src="https://images.unsplash.com/photo-1632636860115-41a0ae878f2f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="Placeholder for player 2 card">
                     </div>
                 </div>
 
                 <h3>Result</h3>
 
+                <div id="scoreboard">
+                    <p>Player 1 Score: <span id="player1Score">0</span></p>
+                    <p>Player 2 Score: <span id="player2Score">0</span></p>
+                    <p>Total Rounds: <span id="totalRounds">0</span></p>
+                </div>
+
+                <div id="scoreSection">
+                    <p id="scoreMessage"></p>
+                    <button id="refreshButton">Refresh</button>
+                </div>
+
             </section>
-        </main>       
+        </main>
+
+        <footer>
+			<p class="registered">Copyright © 2023 Card clash | Code and Design by: <a href="https://joseoliveira.netlify.app/">José Oliveira</a></p>
+		  </footer>
 
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>

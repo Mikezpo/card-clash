@@ -9,37 +9,46 @@
 /* LAYOUT */
 
 img{
-    height: 15rem;
-    width: 10rem;
-    background: rgb(249, 243, 220);
-    border-radius: 10px;
-    margin: 0 auto;
-    box-shadow: 10px 5px 10px rgb(117, 162, 201);
+  height: 15rem;
+  width: 10rem;
+  background: rgb(249, 243, 220);
+  border-radius: 10px;
+  margin: 0 auto;
+  box-shadow: 10px 5px 10px rgb(117, 162, 201);
+  transition: all 0.8s ease;
 }
 
 img:hover {
   transform: scale(1.1);
-  transition: all 0.8s ease;
+  
 }
 
 body {
   margin: 0;
-  background: rgb(232, 226, 203);
+  background: rgb(39, 39, 39);
 }
 
 section {
   padding: 2rem;
   margin: 2rem;
   text-align: center;
-  background: rgb(249, 243, 220);
+  background: rgb(197, 228, 234);
+  border-radius: 10px;
+  
 }
 
 div {
-  margin: 4rem auto;
+  margin: 2rem auto;
   display: flex;
   align-items: center;
   justify-content: center;
   background: rgb(197, 228, 234);
+  border-radius: 10px;
+}
+
+#scoreSection {
+  background: none;
+  display: none;
 }
 
 .secondDiv {
@@ -54,19 +63,24 @@ div {
 button {
   background: rgb(117, 162, 201);
   padding: 0.5rem 1rem;
-  border-radius: 16px;
-  border: 1px solid rgb(117, 162, 201);
+  border-radius: 10px;
+  border: 2px solid rgb(117, 162, 201);
   color: rgb(249, 243, 220);
   font-weight: 500;
   font-family: 'Lobster Two', cursive;
   cursor: pointer;
+  transition: all 0.8s ease-out;
 }
 
 button:hover {
-  background: rgb(249, 243, 220);
+  background: rgb(255, 255, 255);
   color: rgb(117, 162, 201);
   transform: scale(1.1);
-  transition: all 0.8s ease-out;
+  
+}
+
+h1 {
+  margin-top: 1rem;
 }
 
 h1, h2 {
@@ -74,12 +88,6 @@ h1, h2 {
 }
 
 h3 {
-  font-size: 2.8rem;
+  font-size: 2.2rem;
   font-family: 'Lobster Two', cursive;
 }
-
-
-  
-  
-/* ADDITIONAL STYLES */
-  

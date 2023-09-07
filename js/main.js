@@ -1,63 +1,83 @@
 let deckId = ''
 
-fetch('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=10')
+// Fetch and shuffle the deck
+fetch('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1')
     .then(res => res.json())
     .then(data => {
-        console.log(data)
-        deckId = data.deck_id
-
+        deckId = data.deck_id;
     })
     .catch(err => {
-        console.log(`error ${err}`)
+        console.log(`Error: ${err}`);
+        showError("The card deck is finished. Please refresh the page.");
     });
 
+// Add event listener to the button
+document.querySelector('button').addEventListener('click', drawTwo);
 
+let player1TotalScore = 0;
+let player2TotalScore = 0;
+let totalRoundsPlayed = 0;
 
-document.querySelector('button').addEventListener('click', drawTwo)
+function drawTwo() {
+    const url = `https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=2`;
 
-document.querySelector('input').addEventListener('keypress', function(event) {
-    if (event.key === 'Enter') {
-        drawTwo();
-    }
-  });
-
-function drawTwo(){
-    const url = `https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=2`
-    
     fetch(url)
-        .then(res => res.json()) // parse response as JSON
+        .then(res => res.json())
         .then(data => {
-            console.log(data)
-            document.querySelector('#player1').src = data.cards[0].image
-            document.querySelector('#player2').src = data.cards[1].image
-            let player1Val = converToNum(data.cards[0].value)
-            let player2Val = converToNum(data.cards[1].value)
-            if(player1Val > player2Val) {
-                document.querySelector('h3').innerText = 'Player 1 Wins'
-            }else if(player1Val < player2Val) {
-                document.querySelector('h3').innerText = 'Player 2 Wins'
-            }else {
-                document.querySelector('h3').innerText = 'Time for WAR!'
+            document.querySelector('#player1').src = data.cards[0].image;
+            document.querySelector('#player2').src = data.cards[1].image;
+
+            let player1Val = convertToNum(data.cards[0].value);
+            let player2Val = convertToNum(data.cards[1].value);
+
+            totalRoundsPlayed++;
+            if (player1Val > player2Val) {
+                player1TotalScore++;
+                document.querySelector('h3').innerText = 'Player 1 Wins this round!';
+            } else if (player1Val < player2Val) {
+                player2TotalScore++;
+                document.querySelector('h3').innerText = 'Player 2 Wins this round!';
+            } else {
+                document.querySelector('h3').innerText = 'This round is a draw!';
+            }
+
+            updateScores();
+
+            // Decide and display the game winner after 10 rounds
+            if (totalRoundsPlayed === 26) {
+                decideWinner();
             }
         })
         .catch(err => {
-              console.log(`error ${err}`)
+            console.log(`Error: ${err}`);
+            showError("The card deck is finished. Please refresh the page.");
         });
-};
+}
 
 
-// Convert to Numbers
-    
-function converToNum(val) {
-    if(val === 'ACE') {
-        return 14;
-    }else if(val === 'KING') {
-        return 13
-    }else if(val === 'QUEEN') {
-        return 12
-    }else if(val === 'JACK') {
-        return 11
-    }else {
-        return Number(val)
-    }
-};
+
+// Convert card value to number for comparison
+function convertToNum(val) {
+    const cardValues = {
+        'ACE': 14,
+        'KING': 13,
+        'QUEEN': 12,
+        'JACK': 11
+    };
+    return cardValues[val] || Number(val);
+}
+
+// Event listener for the refresh button
+document.querySelector('#refreshButton').addEventListener('click', function() {
+    location.reload();
+});
+
+function showScore(scoreMessage) {
+    // Display the error message
+    document.querySelector('#scoreMessage').innerText = scoreMessage;
+
+    // Show the error section and hide the game section
+    document.querySelector('#scoreSection').style.display = 'block';
+    document.querySelector('button').style.display = 'none'; // Hide the deal button
+    document.querySelector('h3').style.display = 'none';     // Hide the result text
+}
