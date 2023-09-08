@@ -123,3 +123,9 @@ function showScore(scoreMessage) {
     document.querySelector('button').style.display = 'none'; // Hide the deal button
     document.querySelector('h3').style.display = 'none';     // Hide the result text
 }
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter' || event.keyCode === 13) {
+        drawTwo();
+    }
+});
